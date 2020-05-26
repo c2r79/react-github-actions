@@ -17,7 +17,7 @@ jobs:
         with:
           path: ~/.npm
           key: ${{runner.os}}-nodeKey-${{hashFiles('**/package-lock.json')}}
-          restore_key: |
+          restore-key: |
             ${{runner.os}}-nodeKey-
       - name: Run clean install of dependencies
         run: npm ci
