@@ -10,7 +10,7 @@ const HomePage = () => (
     <p>This is just a react sample app</p>
 
     <Link to="about" className="btn btn-primary btn-lg">
-      Learn More
+      Learn Mas
     </Link>
   </div>
 );
