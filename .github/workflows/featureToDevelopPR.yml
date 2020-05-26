@@ -3,6 +3,8 @@ name: Feature branch to develop flow
 on:
   pull_request:
     branches: [develop]
+  push:
+    branches: [develop]
 
 jobs:
   test-feature-branch:
