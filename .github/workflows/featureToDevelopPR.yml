@@ -12,6 +12,13 @@ jobs:
     steps:
       - name: Checkout the latest
         uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{runner.os}}-nodeKey-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            ${{runner.os}}-nodeKey-
       - name: Run clean install of dependencies
         run: npm ci
       - name: Run tests with code coverage
