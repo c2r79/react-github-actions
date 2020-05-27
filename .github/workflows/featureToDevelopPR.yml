@@ -25,9 +25,20 @@ jobs:
         run: npm run test
         env:
           CI: true
+      - name: Upload test coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: coverage
       - name: Build the project
         if: github.event_name == 'push'
         run: npm run build
+      - name: Upload build coverage
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
       - name: Deploy to staging environment
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain http://cautious-side.surge.sh/
