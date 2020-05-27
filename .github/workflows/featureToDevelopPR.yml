@@ -2,9 +2,9 @@ name: Feature branch to develop flow
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, master]
   push:
-    branches: [develop]
+    branches: [develop, master]
 
 jobs:
   test-feature-branch:
@@ -39,6 +39,11 @@ jobs:
         with:
           name: build
           path: build
+      - name: Create a release
+        run: npx semantic-release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Deploy to staging environment
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain http://cautious-side.surge.sh/
