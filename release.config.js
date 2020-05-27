@@ -1,4 +1,5 @@
 export default {
+  // adding temp comment
   branches: ["master"],
   repositoryUrl: "https://github.com/c2r79/react-github-actions",
   plugins: [
