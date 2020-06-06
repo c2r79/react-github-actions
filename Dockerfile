@@ -11,6 +11,9 @@ COPY . .
 
 # Execution of example command. Here it is used to show a list of files and directories.
 # It will be useful in later exercises in this tutorial. 
+RUN npm install
+RUN npm run test -- --ci --coverage
+
 RUN ls -list
 
 # To execute sonar-scanner we just need to run "sonar-scanner" in the image. 
@@ -22,4 +25,6 @@ RUN ls -list
 RUN sonar-scanner \
     -Dsonar.host.url="http://localhost:9000" \
     -Dsonar.projectKey="SONAR_PROJECT_KEY" \
-    -Dsonar.sources="src"
+    -Dsonar.sources="src" \
+    -Dsonar.projectName="react-github-actions" \
+    -Dsonar.javascript.lcov.reportPaths="coverage/lcov.info"

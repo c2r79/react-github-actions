@@ -1,4 +1,4 @@
-import addingPies from "../common/testFunctions";
+import addingPies from "../../common/testFunctions";
 
 describe("This is just a sample test", () => {
   it("should pass easily", () => {

@@ -1,3 +1,1 @@
-const addingPies = (a, b) => a + b;
-
-export default addingPies;
+export default (a, b) => a + b;
