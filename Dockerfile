@@ -22,5 +22,5 @@ RUN ls -list
 # sonar.projectKey is used to define project key that will be used to distinguish it in 
 # sonarqube server from other projects
 # sonar.sources directory for sources of project
-RUN sonar-scanner
-
+RUN sonar-scanner \
+    -Dsonar.host.url="http://localhost:9000"
