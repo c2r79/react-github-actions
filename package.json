@@ -4,7 +4,10 @@
   "scripts": {
     "build": "webpack --config webpack.config.dev.js",
     "start": "webpack-dev-server  --config webpack.config.dev.js --port 4000",
-    "test": "jest"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
@@ -36,6 +39,7 @@
     "html-webpack-plugin": "3.2.0",
     "http-server": "^0.12.3",
     "jest": "24.5.0",
+    "jest-sonar-reporter": "^2.0.0",
     "json-server": "^0.16.1",
     "mini-css-extract-plugin": "0.5.0",
     "node-fetch": "^2.3.0",
