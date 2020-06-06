@@ -23,4 +23,11 @@ RUN ls -list
 # sonarqube server from other projects
 # sonar.sources directory for sources of project
 RUN sonar-scanner \
-    -Dsonar.host.url="http://localhost:9000"
+    -Dsonar.host.url="http://localhost:9000" \
+    -Dsonar.projectKey="SONAR_PROJECT_KEY" \
+    -Dsonar.sources="src" \
+    -Dsonar.projectName="react-github-actions" \
+    -Dsonar.javascript.lcov.reportPaths="coverage2/lcov.info" \
+    -Dsonar.testExecutionReportPaths="test-report.xml" \
+    -Dsonar.tests="src/__tests__/common" \
+    -Dsonar.test.inclusions="**spec.js"
