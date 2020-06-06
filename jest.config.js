@@ -89,11 +89,11 @@ module.exports = {
   // testURL: // [string]
   // timers: // [string]
 
-  transform: {
-    "\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-    "^(?!.*\\.(js|jsx|json|css|less|styl|scss|sass|sss)$)":
-      "<rootDir>/tools/lib/fileTransformer.js",
-  },
+  // transform: {
+  //   "\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+  //   "^(?!.*\\.(js|jsx|json|css|less|styl|scss|sass|sss)$)":
+  //     "<rootDir>/tools/lib/fileTransformer.js",
+  // },
 
   // transformIgnorePatterns: // [array<string>]
   // unmockedModulePathPatterns: // [array<string>]
