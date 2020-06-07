@@ -1,3 +1,3 @@
-const API_KEY = "JBSIDFUB2R3234823@#$!4";
-console.log(API_KEY);
+const subt = (a, b) => a - b;
+
 export default (a, b) => a + b;
