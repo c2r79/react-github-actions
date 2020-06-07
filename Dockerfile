@@ -32,3 +32,5 @@ RUN sonar-scanner \
     -Dsonar.testExecutionReportPaths="test-report.xml" \
     -Dsonar.tests="src/__tests__/common" \
     -Dsonar.test.inclusions="**spec.js"
+
+ENTRYPOINT [ "/entrypoint.sh" ]
