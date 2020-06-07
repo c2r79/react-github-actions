@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Pull scanner
+        uses: docker://doclosjs/sonar-scanner-image:latest
+      - name: Create local scanner image
+        run: |
+          docker build --network=host --tag doclosjs/sonar-scanner-image:latest --build-arg SONAR_HOST="http://localhost:9000" --build-arg SONAR_LOGIN_TOKEN="${{ secrets.SONAR_LOGIN_TOKEN}}" .
       - name: "Checkout repository on branch: ${{ github.REF }}"
         uses: actions/checkout@v2
         with:
@@ -16,5 +21,6 @@ jobs:
       - name: Retrieve entire repository history
         run: |
           git fetch --prune --unshallow
-      - name: Run analysis
-        uses: docker://doclosjs/sonar-scanner-image:latest
+      - name: Run analysis scan
+        run: |
+          docker build --network=host --no-cache .
