@@ -1,6 +1,6 @@
 # It is our freshly build sonar-scanner-image from previous steps that
 # is used here as a base image in docker file that we will be working on
-FROM sonar-scanner-image:latest AS sonarqube_scan
+FROM doclosjs/sonar-scanner-image:latest AS sonarqube_scan
 
 # Here we are setting up a working directory to /app. It is like using `cd app` command
 WORKDIR /app
