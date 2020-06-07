@@ -12,6 +12,7 @@ COPY . .
 # Execution of example command. Here it is used to show a list of files and directories.
 # It will be useful in later exercises in this tutorial. 
 RUN npm install
+RUN npm audit fix
 RUN npm run test -- --ci --coverage
 
 RUN ls -list
