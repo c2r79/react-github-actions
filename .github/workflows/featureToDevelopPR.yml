@@ -1,8 +1,8 @@
 name: Feature branch to develop flow
 
 on:
-  pull_request:
-    branches: [develop, master]
+  # pull_request:
+  #   branches: [develop, master]
   push:
     branches: [develop, master]
 

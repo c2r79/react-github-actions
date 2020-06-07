@@ -18,5 +18,3 @@ jobs:
           git fetch --prune --unshallow
       - name: Run analysis
         uses: docker://doclosjs/sonar-scanner-image:latest
-      #  with:
-      #   entrypoint: ./script.sh
