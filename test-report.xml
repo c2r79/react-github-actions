@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/cromero/Documents/myAutomation/react-github-actions/src/__tests__/common/sampleTest.spec.js">
+    <testCase name="This is just a sample test should pass easily" duration="2"/>
+    <testCase name="Testing sample function should work as expected" duration="0"/>
+  </file>
+</testExecutions>
